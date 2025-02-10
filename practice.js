@@ -17,7 +17,7 @@ if(b !== 0 ){
 
 // Write a program that checks if a number is positive, negative, or zero.
 
- num = parseFloat(prompt("Enter a number "));
+let num = parseFloat(prompt("Enter a number "));
 
 if (num===0){
     console.log(num, "is zero")
@@ -55,7 +55,7 @@ if(num===0){
 // Write a program that checks if a number is even or odd.
 
 
- num = parseFloat(prompt("Enter a number"));
+let num = parseFloat(prompt("Enter a number"));
 
 while (isNaN(num)){
     num= parseFloat(prompt("invalid input! please enter a valid number"));
