@@ -312,3 +312,294 @@ for(let i =1 ; i <= rows; i++){
     
     console.log(row);
 }
+
+
+
+
+
+
+
+
+// Write a function isEven that takes a number as an argument and returns true if the number is even, otherwise false.
+
+function isEven(number) {
+    if(number%2===0){
+        return true
+    }else{
+        return false
+    }
+};
+
+console.log(isEven(34));
+
+
+
+//We can also write it in this way
+function isEven(number) {
+    if(typeof number !== 'number'){
+        return false
+    }
+
+    return number%2===0
+}
+
+console.log(isEven(22));     //true
+console.log(isEven(39));     //false
+console.log(isEven(isNaN));     //false
+console.log(isEven(undefined));     //false
+console.log(isEven("abc"));     //false
+console.log(isEven("12123"));     //false
+
+
+
+
+// Write a function isOdd that takes a number as an argument and returns true if the number is odd, otherwise false.
+
+function isOdd(number) {
+    if(typeof number !== 'number'){
+        return false
+    }else{
+        return number%2!==0;
+    }
+}
+
+
+console.log(isOdd(33));       //true
+console.log(isOdd(38));       //false
+console.log(isOdd(null));       //false
+console.log(isOdd(undefined));       //false
+console.log(isOdd("123"));       //false
+console.log(isOdd("abc"));       //false
+
+
+
+
+
+// Write a function isDivisibleBy that takes two numbers (num and divisor) and returns true if num is divisible by divisor, otherwise false.
+
+function isDivisibleBy(num, divisor) {
+
+    if(divisor===0){
+        return false
+    }
+
+    return num%divisor===0;
+}
+
+console.log(isDivisibleBy(13, 2));
+
+
+
+
+// If you want to handle cases where the input might be a string (e.g., "10" instead of 10), you can convert the input to a number using Number() or parseInt().
+
+function isDivisibleBy(num, divisor) {
+    num= Number(num);
+    divisor = Number(divisor)
+
+    if(divisor===0){
+        return false
+    }
+
+    return num%divisor===0
+
+
+}
+
+console.log(isDivisibleBy(24, 3))      //true
+console.log(isDivisibleBy(22, 4))      //false
+console.log(isDivisibleBy("30", 3))      //true
+console.log(isDivisibleBy(30, 0))      //false
+
+
+
+
+// Write a function sumOfDigits that takes a number and returns the sum of its digits. For example, sumOfDigits(123) should return 6.
+
+function sumOfDigits(number) {
+    let numberstr = number.toString();
+
+    let sum = 0 ;
+
+    for(let i =0; i< numberstr.length ; i++){
+        sum = sum + parseInt(numberstr[i])
+    }
+
+    return sum;
+}
+
+console.log(sumOfDigits(123));
+
+
+
+
+
+// Write a function factorial that takes a number and returns its factorial. For example, factorial(5) should return 120.
+
+function factorial(number) {
+    let product = 1;
+
+    for(let i = 2; i<=number; i++){   //we will start i from 2 because the factoial for 0 and 1 will return inital value that is 1
+
+
+        product  = product * i
+    }
+
+    return product
+}
+
+console.log(factorial(5));        //120
+
+
+
+
+//in order to handle the negative numbers 
+
+function factorial(number) {
+    if(number < 0 ){
+        return "factorial is not defined for negative numbers"
+    }
+
+    if(number===1 || number===0){
+        return 1;
+    }
+
+    let product =1 ; 
+    for(let i =2; i<= number ; i++){
+        product = product * i
+    }
+
+    return product;
+}
+
+
+console.log(factorial(0));
+
+
+
+
+
+// Write a function isPositive that takes a number and returns true if the number is positive, otherwise false.
+
+function isPositive(number) {
+
+    if(typeof number !== 'number'){
+        return false
+    }
+
+    return number > 0;
+}
+
+console.log(isPositive(-4));
+
+
+
+
+// Write a function checkNumber that takes a number and returns:
+
+// "Even and Positive" if the number is even and positive.
+// "Odd and Positive" if the number is odd and positive.
+// "Even and Negative" if the number is even and negative.
+// "Odd and Negative" if the number is odd and negative.
+
+
+function checkNumber(number) {
+    if(number===0){
+        return "zero";
+    }
+    else if(number > 0){
+        return number%2===0? "Even and Positive" : "Odd and Positive"
+    }else{
+        return number%2===0? "Even and Negative" : "Odd and Negative"
+    }
+}
+
+console.log(checkNumber(0))
+console.log(checkNumber(10))
+console.log(checkNumber(-30))
+console.log(checkNumber(33))
+console.log(checkNumber(-43))
+
+
+
+// Write a function isLeapYear that takes a year and returns true if it's a leap year, otherwise false.
+
+function isLeapYear(year) {
+    return (year%400===0) || (year%100 === 0 && year % 4===0)?
+    "it is a leap" : "it is not a leap year"
+}
+
+console.log(isLeapYear(2000));
+console.log(isLeapYear(2010));
+
+
+
+
+// // Create an array of your favorite fruits and print each fruit using a for loop.
+
+let fruits = ["Apple", "Mango", "Litchi", "Grapes", "Banana"];
+
+for(let i=0; i < fruits.length; i++){
+    console.log(fruits[i])
+};
+
+
+
+
+// Write a function findMax that takes an array of numbers and returns the largest number in the array.
+
+function findMax(array) {
+    let max = array[0];
+
+    for(let i = 1; i < array.length; i++){
+        if(array[i] > max){
+            max = array[i]
+        }
+    }
+
+    return max
+}
+
+let numbers = [1,2,3,4,58,6,7,8,9];
+console.log(findMax(numbers));
+
+
+//we can also solve it by using Math.max(...array); 
+
+function findMax(array) {
+    return Math.max(...array)
+}
+
+let numbers = [1,2,3,4,5,67];
+console.log(findMax(numbers));
+
+
+
+
+
+// // Write a function findMin that takes an array of numbers and returns the smallest number in the array.
+
+function findMin(array) {
+    return Math.min(...array)
+}
+
+let numbers = [1,-2,3,4,9,7];
+console.log(findMin(numbers));
+
+
+
+
+// // Write a function sumArray that takes an array of numbers and returns the sum of all the numbers.
+
+function sumArray(array) {
+    let sum =0; 
+
+    for(let i =0; i<array.length; i++){
+        sum = sum + array[i]
+    }
+
+    return sum;
+}
+
+let numbers= [1,2,3,4,5];
+console.log(sumArray(numbers));
