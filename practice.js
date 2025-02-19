@@ -1,4 +1,4 @@
-// Write a program that takes two numbers as input and prints their sum, difference, product, and quotient.
+// 1: Write a program that takes two numbers as input and prints their sum, difference, product, and quotient.
 
 let a = parseFloat(prompt("enter a first number"));
 let b = parseFloat(prompt("enter a second number"));
@@ -15,7 +15,7 @@ if(b !== 0 ){
 }
 
 
-// Write a program that checks if a number is positive, negative, or zero.
+// 2: Write a program that checks if a number is positive, negative, or zero.
 
 let num = parseFloat(prompt("Enter a number "));
 
@@ -28,7 +28,7 @@ if (num===0){
 };
 
 
-// If we want to ensure the user enters a valid number, we can use a loop to keep asking for input until a valid number is provided:
+// 3: If we want to ensure the user enters a valid number, we can use a loop to keep asking for input until a valid number is provided:
 
 let num;
 
@@ -52,7 +52,7 @@ if(num===0){
 
 
 
-// Write a program that checks if a number is even or odd.
+// 4: Write a program that checks if a number is even or odd.
 
 
 let num = parseFloat(prompt("Enter a number"));
@@ -68,14 +68,14 @@ while (isNaN(num)){
 };
 
 
-// Write a program that prints numbers from 1 to 10 using a for loop.
+// 5: Write a program that prints numbers from 1 to 10 using a for loop.
 
 for (let i = 0; i <= 10 ; i++) {
     console.log(i);
     
 }
 
-// Write a program that prints numbers from 10 to 1 using a for loop.
+// 6: Write a program that prints numbers from 10 to 1 using a for loop.
 for(let num=10; num >=1; num--){
     console.log(num)
 };
@@ -83,7 +83,7 @@ for(let num=10; num >=1; num--){
 
 
 
-// Write a program that prints only the even numbers from 1 to 10.
+// 7: Write a program that prints only the even numbers from 1 to 10.
 
 for(let num=1; num<=10; num++){
     if(num%2===0){
@@ -93,7 +93,7 @@ for(let num=1; num<=10; num++){
 
 
 
-// Write a program that sum numbers from 1 to 10.
+// 8: Write a program that sum numbers from 1 to 10.
 
 let sum = 0;
 for(let num =1; num <= 10; num++){
@@ -104,7 +104,7 @@ console.log("sum of numbers from 1 to 10 is", sum);
 
 
 
-// Write a program that prints the multiplication table of a number (e.g., 5).
+// 9: Write a program that prints the multiplication table of a number (e.g., 5).
 
 let num = 5;
 
@@ -115,7 +115,7 @@ for(let i =1; i <=10; i++){
 
 
 
-// Write a program that takes two numbers as input (e.g., start and end) and prints all numbers in that range.
+// 10: Write a program that takes two numbers as input (e.g., start and end) and prints all numbers in that range.
 let starnum = 12; 
 let endnum = 23;
 
@@ -126,7 +126,7 @@ for(let num=starnum ; num <= endnum; num++){
 
 
 
-// Write a program that prints numbers from 1 to 10 but skips a specific number (e.g., skip 7).
+// 11: Write a program that prints numbers from 1 to 10 but skips a specific number (e.g., skip 7).
 let skipnum =7;
 
 for(let i=1; i<=10; i++){
@@ -139,7 +139,7 @@ for(let i=1; i<=10; i++){
 
 
 
-// Write a program that prints numbers from 1 to 10 but skips more than one number (e.g., skip 3,7,9).
+// 12: Write a program that prints numbers from 1 to 10 but skips more than one number (e.g., skip 3,7,9).
 
 let skipnumbers = [3,7,9];
 
@@ -164,7 +164,7 @@ for(let i =1; i<=20; i++){
 
 
 
-// print all numbers from 1 to 10 except multiples of 3
+// 13:print all numbers from 1 to 10 except multiples of 3
 for(let i=0; i<=10; i++){
     if(i%3===0){
         continue
@@ -174,7 +174,7 @@ for(let i=0; i<=10; i++){
 
 
 
-// Write a program that uses a nested loop to print a pattern like this:
+// 14: Write a program that uses a nested loop to print a pattern like this:
 // 1
 // 1 2
 // 1 2 3
@@ -192,7 +192,7 @@ for(let i=1; i<=5; i++){
 
 
 
-// Let’s create a program that prints a pyramid pattern like this:
+// 15: Let’s create a program that prints a pyramid pattern like this:
 
 //     1
 //    1 2
@@ -215,7 +215,7 @@ for(let i=1; i<=rows; i++){
 };
 
 
-// Print the pyramid upside-down:
+// 16: Print the pyramid upside-down:
 
 // 1 2 3 4 5
 //  1 2 3 4
@@ -241,7 +241,7 @@ for(let i=rows; i>=1; i--){
 
 
 
-// Print a right-aligned number triangle:
+// 17 : Print a right-aligned number triangle:
 
 //     1
 //   1 2
@@ -266,7 +266,7 @@ for(let i= 1 ; i <= rows ; i++){
 
 
 
-// Print an inverted right-aligned number triangle:
+// 18: Print an inverted right-aligned number triangle:
 
 let rows = 5;
 
@@ -289,7 +289,7 @@ for(let i= rows ; i >= 1 ; i--){
 
 
 
-// Replace numbers with stars (*) to create a star pyramid:
+// 19 : Replace numbers with stars (*) to create a star pyramid:
 
 // Copy
 //    *
@@ -320,7 +320,7 @@ for(let i =1 ; i <= rows; i++){
 
 
 
-// Write a function isEven that takes a number as an argument and returns true if the number is even, otherwise false.
+// 20: Write a function isEven that takes a number as an argument and returns true if the number is even, otherwise false.
 
 function isEven(number) {
     if(number%2===0){
@@ -353,7 +353,7 @@ console.log(isEven("12123"));     //false
 
 
 
-// Write a function isOdd that takes a number as an argument and returns true if the number is odd, otherwise false.
+// 21: Write a function isOdd that takes a number as an argument and returns true if the number is odd, otherwise false.
 
 function isOdd(number) {
     if(typeof number !== 'number'){
@@ -375,7 +375,7 @@ console.log(isOdd("abc"));       //false
 
 
 
-// Write a function isDivisibleBy that takes two numbers (num and divisor) and returns true if num is divisible by divisor, otherwise false.
+// 22: Write a function isDivisibleBy that takes two numbers (num and divisor) and returns true if num is divisible by divisor, otherwise false.
 
 function isDivisibleBy(num, divisor) {
 
@@ -391,7 +391,7 @@ console.log(isDivisibleBy(13, 2));
 
 
 
-// If you want to handle cases where the input might be a string (e.g., "10" instead of 10), you can convert the input to a number using Number() or parseInt().
+// 23 : If you want to handle cases where the input might be a string (e.g., "10" instead of 10), you can convert the input to a number using Number() or parseInt().
 
 function isDivisibleBy(num, divisor) {
     num= Number(num);
@@ -414,7 +414,7 @@ console.log(isDivisibleBy(30, 0))      //false
 
 
 
-// Write a function sumOfDigits that takes a number and returns the sum of its digits. For example, sumOfDigits(123) should return 6.
+// 24: Write a function sumOfDigits that takes a number and returns the sum of its digits. For example, sumOfDigits(123) should return 6.
 
 function sumOfDigits(number) {
     let numberstr = number.toString();
@@ -434,7 +434,7 @@ console.log(sumOfDigits(123));
 
 
 
-// Write a function factorial that takes a number and returns its factorial. For example, factorial(5) should return 120.
+// 25 : Write a function factorial that takes a number and returns its factorial. For example, factorial(5) should return 120.
 
 function factorial(number) {
     let product = 1;
@@ -453,7 +453,7 @@ console.log(factorial(5));        //120
 
 
 
-//in order to handle the negative numbers 
+// 26: in order to handle the negative numbers 
 
 function factorial(number) {
     if(number < 0 ){
@@ -479,7 +479,7 @@ console.log(factorial(0));
 
 
 
-// Write a function isPositive that takes a number and returns true if the number is positive, otherwise false.
+// 27 : Write a function isPositive that takes a number and returns true if the number is positive, otherwise false.
 
 function isPositive(number) {
 
@@ -495,7 +495,7 @@ console.log(isPositive(-4));
 
 
 
-// Write a function checkNumber that takes a number and returns:
+// 28: Write a function checkNumber that takes a number and returns:
 
 // "Even and Positive" if the number is even and positive.
 // "Odd and Positive" if the number is odd and positive.
@@ -522,7 +522,7 @@ console.log(checkNumber(-43))
 
 
 
-// Write a function isLeapYear that takes a year and returns true if it's a leap year, otherwise false.
+// 29: Write a function isLeapYear that takes a year and returns true if it's a leap year, otherwise false.
 
 function isLeapYear(year) {
     return (year%400===0) || (year%100 === 0 && year % 4===0)?
@@ -535,7 +535,7 @@ console.log(isLeapYear(2010));
 
 
 
-// // Create an array of your favorite fruits and print each fruit using a for loop.
+// 30:  Create an array of your favorite fruits and print each fruit using a for loop.
 
 let fruits = ["Apple", "Mango", "Litchi", "Grapes", "Banana"];
 
@@ -546,7 +546,7 @@ for(let i=0; i < fruits.length; i++){
 
 
 
-// Write a function findMax that takes an array of numbers and returns the largest number in the array.
+// 31: Write a function findMax that takes an array of numbers and returns the largest number in the array.
 
 function findMax(array) {
     let max = array[0];
@@ -577,7 +577,7 @@ console.log(findMax(numbers));
 
 
 
-// // Write a function findMin that takes an array of numbers and returns the smallest number in the array.
+// 32: Write a function findMin that takes an array of numbers and returns the smallest number in the array.
 
 function findMin(array) {
     return Math.min(...array)
@@ -589,7 +589,7 @@ console.log(findMin(numbers));
 
 
 
-// // Write a function sumArray that takes an array of numbers and returns the sum of all the numbers.
+// 33: Write a function sumArray that takes an array of numbers and returns the sum of all the numbers.
 
 function sumArray(array) {
     let sum =0; 
