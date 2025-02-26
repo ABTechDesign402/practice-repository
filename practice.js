@@ -603,3 +603,398 @@ function sumArray(array) {
 
 let numbers= [1,2,3,4,5];
 console.log(sumArray(numbers));
+
+
+
+
+// 34 : Write a function averageArray that takes an array of numbers and returns the average of those numbers.
+
+function averageArray(array) {
+    let sum =0;
+
+    for(let i=0; i<array.length; i++){
+        sum += array[i]
+    }
+
+    let average = sum / array.length;
+    return average;
+}
+
+let numbers = [10,20, 30, 40, 50];
+console.log(averageArray(numbers));
+
+
+
+
+// 35 : Write a function countEvenNumbers that takes an array of numbers and returns the count of even numbers in the array.
+
+function countEvenNumbers(array) {
+    let count = 0;
+
+    for(let num of array){
+        if(num % 2===0){
+            count++
+        }
+    }
+
+    return count
+}
+ 
+let number = [1,2,3,4,5,6,7,8,22,24,]
+console.log(countEvenNumbers(number));
+
+
+// we can also write it by using for loop 
+
+function countEvenNumbers(array) {
+    let count = 0; 
+
+    for(let i=0; i<array.length; i++){
+        if(array[i]%2===0){
+            count++
+        }
+    }
+
+    return count
+}
+
+let numbers = [1,2,3,4,5,6,7,8,9,10]
+console.log(countEvenNumbers(numbers));
+
+
+
+// 36 : Write a function containsValue that takes an array and a value as arguments and returns true if the value exists in the array, otherwise false.
+
+function containsValue(array, value) {
+    return array.includes(value)
+}
+
+let numbers = [1,2,3,4,5,6,7,8,9];
+console.log(containsValue(numbers, 60));  //false
+console.log(containsValue(numbers, 3));  //true
+
+
+
+// 37: Write a function reverseArray that takes an array and returns a new array with the elements in reverse order.
+
+function reverseArray(array) {
+    let reversedArray = [];
+
+    for(let i = array.length-1; i>=0; i--){
+        reversedArray.push(array[i])
+    }
+
+    return reversedArray
+}
+
+let numbers = [1,2,3,4];
+console.log(reverseArray(numbers));
+
+
+
+// we can also solve it by using reverse method of javascript
+
+function reverseArray(array) {
+    return [...array].reverse()
+}
+
+let numbers = [1,2,3,4];
+console.log(reverseArray(numbers));
+
+
+
+
+// 38: Write a function reverseString that takes a string and returns the reversed string.
+
+// method 1 using reverse and join method
+
+function reverseString(string) {
+    return [...string].reverse().join("")
+}
+
+let str = "abcd";
+console.log(reverseString(str));
+
+
+// method 2 using loop
+
+function reverseString(string) {
+    let reversedstr = "";
+
+    for(let i = string.length-1; i >= 0 ; i--){
+        reversedstr += string[i];
+    }
+
+    return reversedstr
+}
+
+let str = "abcd";
+console.log(reverseString(str))
+
+
+// method 3 using split, reverse and join method 
+
+function reverseString(string) {
+    return string.split("").reverse().join("")
+}
+
+let str = "hello javascript";
+console.log(reverseString(str));
+
+
+
+// 39: Write a function isPalindrome that checks if a string is a palindrome (reads the same backward as forward). Return true if it is, otherwise false.
+
+function  isPalindrome(string) {
+    return string.split("").reverse().join("")===string
+}
+
+console.log(isPalindrome("hello"));          //false
+console.log(isPalindrome("madam"));          //true
+
+
+
+
+// 40: Write a function findIndex that takes an array and a value as arguments and returns the index of the value in the array. If the value is not found, return -1.
+
+
+function findIndex(array, value) {
+    for(let i=0; i<array.length; i++){
+        if(array[i]===value){
+            return i
+        }
+    }
+
+    return -1
+}
+
+let numbers = [23,34,21,78,90];
+console.log(findIndex(numbers, 78));     //3
+console.log(findIndex(numbers, 100));     //-1
+
+
+
+
+// 41: Write a function removeDuplicates that takes an array and returns a new array with duplicates removed.
+
+function removeDuplicates(array) {
+    let uniquearray = [];
+
+    for(let i=0; i < array.length; i++){
+        if(!uniquearray.includes(array[i])){
+            uniquearray.push(array[i])
+        }
+    }
+
+    return uniquearray;
+}
+
+let numbers = [1,2,2,3,3,4,4,7,7];
+console.log(removeDuplicates(numbers));
+
+
+// alternative method using javascript build in method of set
+
+function removeDuplicates(array) {
+    return [...new Set(array)]
+}
+
+let numbers = [1,2,2,3,3,4,4,7,7];
+console.log(removeDuplicates(numbers));
+
+
+
+
+// 42 : Write a function removeDuplicatesFromStrings that takes an array of strings and returns a new array with duplicate strings removed.
+
+
+function removeDuplicatesFromStrings(array) {
+    
+    let uniquearray = [];
+
+    for(let i =0; i<array.length; i++){
+        if(!uniquearray.includes(array[i])){
+            uniquearray.push(array[i])
+        }
+    }
+
+    return uniquearray
+}
+
+let string = ["ahmed", "sara", "saba", "sara", "saba", "ahmed"];
+console.log(removeDuplicatesFromStrings(string));
+
+
+//alternative method 
+
+function removeDuplicatesFromStrings(array) {
+    return [...new Set(array)]
+}
+
+let newstring = ["ahmed", "sara", "saba", "sara", "saba", "ahmed"];
+console.log(removeDuplicatesFromStrings(newstring));
+
+
+
+// 43: Write a function findSecondLargest that takes an array of numbers and returns the second largest number.
+
+function findSecondLargest(array) {
+
+    if(array.length < 2){
+        return "there is no second largest number"
+    }
+
+
+    let max = -Infinity;
+    let secondMaxNum = -Infinity;
+
+    for(let i=0; i<array.length; i++){
+        if(array[i] > max){
+            max = array[i]
+        }
+    }
+
+    for(let j =0; j<array.length; j++){
+        if(array[j] > secondMaxNum &&  array[j] < max){
+            secondMaxNum = array[j]
+        }
+    }
+
+    if(secondMaxNum === -Infinity){
+        return null
+    }
+
+    return secondMaxNum
+}
+
+let numbers = [32,679,89,6,21];
+console.log(findSecondLargest(numbers));    //89
+
+
+
+
+// 44 : Write a function isSorted that takes an array of numbers and returns true if the array is sorted in ascending order, otherwise false.
+
+function isSorted(array) {
+    for(let i=0; i<array.length; i++){
+        if(array[i] > array[i+1]){
+            return false
+        } 
+    }
+
+    return true
+}
+
+let numbers1 = [1,2,3,4,5];
+let numbers2 = [1,2,3,41,5];
+console.log(isSorted(numbers2));
+
+
+
+
+// 45 : Write a function mergeArrays that takes two arrays as arguments and returns a new array that merges both arrays.
+
+function mergeArrays(arr1, arr2) {
+    return arr1.concat(arr2)
+}
+
+let array1 = [1,2,3,4,5];
+let array2 = [6,7,8,9,10];
+
+console.log(mergeArrays(array1, array2));
+
+
+
+// alternative method by using the spread operator
+
+function mergeArrays(arr1, arr2) {
+    return [...arr1, ...arr2]
+}
+
+let array1 = [1,2,3,4,5];
+let array2 = [6,7,8,9,10];
+
+console.log(mergeArrays(array1, array2));
+
+
+
+// 46: Write a function findLongestWord that takes an array of strings and returns the longest word in the array.
+
+function findLongestWord(array) {
+    let longestword = "";
+
+    for(let i=0; i< array.length; i++){
+        if(array[i].length > longestword.length){
+            longestword = array[i]
+        }
+    }
+
+    return longestword
+}
+
+let words = ["apples", "bananana", "litchi", "grapessssssss"];
+console.log(findLongestWord(words));
+
+
+
+// 47: Write a function countOccurrences that takes an array and a value as arguments and returns the number of times the value appears in the array.
+
+function countOccurrences(array, value) {
+    let count = 0 ;
+
+    for(let i = 0 ; i<array.length; i++){
+        if(array[i] === value){
+            count++
+        }
+    }
+
+    return count
+}
+
+let numbers = [1,2,3,4,2,7,2,9,2 , 3];
+console.log(countOccurrences(numbers, 3));
+
+
+
+
+// 48 : Write a function countOccurrencesOfEvenNumbers that takes an array of numbers and returns the count of even numbers in the array.
+
+function countOccurrencesOfEvenNumbers(array) {
+    let count = 0;
+
+    for(let i =0; i< array.length ; i++){
+        if(array[i] % 2===0){
+            count++
+        }
+    }
+
+    return count
+}
+
+let numbers =  [1,2,3,4,5,6,7,8,9,10]
+console.log(countOccurrencesOfEvenNumbers(numbers))
+
+
+
+// 49 : Write a function findIntersection that takes two arrays and returns a new array containing the common elements between them.
+
+function findIntersection(arr1, arr2) {
+    let commonelements = [];
+
+    for(let i =0 ; i< arr1.length ; i++){
+        if(arr2.includes(arr1[i])){
+            commonelements.push(arr1[i])
+        }
+    }
+
+    return commonelements
+}
+
+let array1 = [1,2,3,4,5,6];
+let array2 = [2,3,4,9,7,1, 6];
+
+console.log(findIntersection(array1, array2));
+
+
+
+
