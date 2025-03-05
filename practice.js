@@ -998,3 +998,122 @@ console.log(findIntersection(array1, array2));
 
 
 
+// 50: Write a function rotateArray that takes an array and a number k as arguments and rotates the array to the right by k steps.
+
+
+function rotateArray(array, k ) {
+    k = k % array.length; 
+
+    let firstPart = array.slice(-k);
+    let secondPart = array.slice(0, -k)
+
+    return firstPart.concat(secondPart)
+}
+
+let numbers = [1,2,3,4,5];
+console.log(rotateArray(numbers, 2));
+
+
+
+
+// 51: Write a function extractLastThree that extracts the last 3 elements of an array using slice.
+
+function extractLastThree(array) {
+    return array.slice(-3)
+}
+
+let array = [1,2,3,4,5];
+console.log(extractLastThree(array));
+
+
+
+// 52: Write a function that extracts the first k elements of an array.
+
+function extractfirstElement(array) {
+    return array.slice(1)
+}
+
+let array = [1,2,3,4,5, 6,7,8,9,10];
+console.log(extractfirstElement(array, 3));
+
+
+
+// 53: Write a function that extracts elements from the middle of an array (e.g., from index 2 to index 4).
+
+function extractElementsFromMiddle(array) {
+    return array.slice(2,4)
+}
+
+let numbers = [5,3,9,7,2,1];
+console.log(extractElementsFromMiddle(numbers))
+
+
+
+// 54: Write a function findMissingNumber that takes an array of numbers (from 1 to n with one number missing) and returns the missing number.
+
+function findMissingNumber(array) {
+
+    array.sort((a,b) => a-b)
+
+
+    for(let i=0; i<array.length; i++){
+
+        if(array[i] !== i+1){       // it is only useful when numbers starts from 1
+            return i+1
+        }
+    }
+
+    return array.length + 1
+}
+
+let numbers = [1,2,3, 4,5,7]
+console.log(findMissingNumber(numbers));    //6
+
+
+// 55: Write a function findMissingNumbers that takes an array of numbers with more than one number missing numbers and returns the missing numbers.
+
+function findMissingNumbers(numbers) {
+    numbers.sort((a,b) => a-b)
+
+    let missingNumbers = []
+
+    for(let i=0; i<numbers.length; i++){
+        let expectedNum = Array[0] + i       
+
+        if(Array[i] !== expectedNum){
+            for(let j=expectedNum ; j<Array[i]; j++){
+                missingNumbers.push[j]
+            }
+        }
+    }
+
+
+    return missingNumbers
+}
+
+let array = [3,8,6,2,1];
+console.log(findMissingNumbers(array));
+
+
+
+
+// 56 : Write a function findDuplicate that takes an array of numbers where all numbers are from 1 to n, and one number is duplicated. Return the duplicated number.
+
+function findDuplicate(array) {
+    array.sort((a,b) => a-b);
+
+    let duplicatNum  = 0;
+
+    for(let i=0; i < array.length; i++){
+        if(array[i] === array[i+1]){
+            duplicatNum = array[i]
+        }
+    }
+
+    return duplicatNum
+}
+
+let numbers = [1,2,3,3,4,5];
+console.log(findDuplicate(numbers));
+
+
